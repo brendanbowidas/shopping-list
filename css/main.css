@@ -1,0 +1,47 @@
+
+#head {
+    text-align: center;
+    margin: 0 auto;
+}
+
+#input {
+    text-align: center;
+}
+
+ul {
+    list-style-type:none;
+}
+
+.list-item  {
+    border: 1px solid #E4E3E6;
+    border-radius:5px;
+    position:relative;
+
+}
+
+.checked {
+    background-color:#33C3F0;
+    color:#fff;
+    text-decoration: line-through
+
+}
+.checked li {
+
+}
+
+#list-display {
+    word-wrap: break-word;
+    text-align:center;
+    margin-top:5em;
+}
+
+.box-checked,.box {
+    position:absolute;
+    left:0.5em;
+
+}
+
+.remove {
+    position:absolute;
+    right:0.5em;
+}
