@@ -1,7 +1,14 @@
 
 #head {
     text-align: center;
-    margin: 0 auto;
+    position: relative;
+
+}
+
+#head img {
+ position: relative;
+margin-left:-1.5em
+
 }
 
 #input {
@@ -25,9 +32,6 @@ ul {
     text-decoration: line-through
 
 }
-.checked li {
-
-}
 
 #list-display {
     word-wrap: break-word;
@@ -45,3 +49,8 @@ ul {
     position:absolute;
     right:0.5em;
 }
+
+.box:hover, .box-checked:hover, .remove:hover {
+    cursor: pointer;
+}
+
