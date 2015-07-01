@@ -15,19 +15,26 @@ $(document).ready(function () {
     $('.list').on('click', '.box', function () {
 
         $(this).closest('.list-item').addClass('checked', 'fade');
-        var checked = $('<i class="fa fa-check-square-o" id="boxChecked">');
+        var checked = $('<i class="fa fa-check-square-o">');
+        var spanCheck = $('<span class="box-checked">');
+
+
 
         $(this).find('.fa').remove();
-        $(this).append(checked);
+
+
+        $(this).append(spanCheck,checked);
+
+
     });
 
 
     //uncheck item
-    $('.list').on('click', '.box-checked', function () {
+    $('.list').on('click','.box-checked', function () {
 
-        $(this).closest('.list-item.checked').removeClass('checked', 'fade');
+        $(this).closest('.list-item').removeClass('checked', 'fade');
         var unChecked = $('<i class="fa fa-square-o" id="boxUnchecked">');
-
+        var spanCheck = $('<span class="box-checked">');
         $(this).find('.fa').remove();
         $(this).append(unChecked);
     });
