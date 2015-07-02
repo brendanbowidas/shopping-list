@@ -1,3 +1,7 @@
+body {
+
+    color:#2F4F4F;
+}
 
 #head {
     text-align: center;
@@ -25,13 +29,23 @@ ul {
     border: 1px solid #E4E3E6;
     border-radius:5px;
     position:relative;
+    background-color: #3498db;
+    color: #F5FFFA
+
 
 }
 
 .checked {
-    background-color:#33C3F0;
-    color:#fff;
-    text-decoration: line-through
+
+    text-decoration: line-through;
+    background-color: #bdc3c7;
+    color:#2F4F4F;
+    -webkit-filter: blur(1px);
+    -moz-filter: blur(1px);
+    -o-filter: blur(1px);
+    -ms-filter: blur(1px);
+    filter: blur(1px);
+
 
 }
 
@@ -72,5 +86,20 @@ ul {
 
 .list li:hover {
     cursor: move;
+
+}
+
+.button-primary.submit  {
+    background-color: #3498db;
+}
+
+.button-primary.submit:hover {
+    background-color: #2980b9;
+}
+
+.foot {
+    text-align:center;
+    margin-top: 11.5em;
+
 
 }

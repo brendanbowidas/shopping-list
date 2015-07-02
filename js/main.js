@@ -1,6 +1,7 @@
 $(document).ready(function () {
 
-      $('.list').sortable();
+    $('.list').sortable();
+
     //Remove all list items//
     $('.clear').click(function () {
         $('.list-item').fadeOut();
@@ -16,38 +17,31 @@ $(document).ready(function () {
 
         $(this).closest('.list-item').addClass('checked', 'fade');
         var checked = $('<i class="fa fa-check-square-o">');
-        var spanCheck = $('<span class="box-checked">');
-
-
 
         $(this).find('.fa').remove();
-
-
-        $(this).append(spanCheck,checked);
-
+        $(this).append(checked);
+        $(this).toggleClass('box box-checked');
 
     });
 
 
     //uncheck item
-    $('.list').on('click','.box-checked', function () {
+    $('.list').on('click', '.box-checked', function () {
 
         $(this).closest('.list-item').removeClass('checked', 'fade');
-        var unChecked = $('<i class="fa fa-square-o" id="boxUnchecked">');
-        var spanCheck = $('<span class="box-checked">');
+        var unChecked = $('<i class="fa fa-square-o">');
+
         $(this).find('.fa').remove();
         $(this).append(unChecked);
+        $(this).toggleClass('box-checked box');
     });
-
-
-
 
 
     //Add new item to list(button)
     $('.submit').click(function () {
         var newItem = $('#item').val();
         if (newItem != '') {
-            $('#list-display .list').append('<li class="list-item"><span class="box"><i class="fa fa-square-o" id="boxEmpty"></i></span>' + newItem + '<span class="remove"><i class="fa fa-times-circle"></i></span></li>');
+            $('#list-display .list').append('<li class="list-item"><span class="box"><i class="fa fa-square-o"></i></span>' + newItem + '<span class="remove"><i class="fa fa-times-circle"></i></span></li>');
         }
         $('#item').val('');
         $('.counter').text('40');
@@ -58,17 +52,17 @@ $(document).ready(function () {
         var newItem = $('#item').val();
         if (e.which === 13 && newItem != '') {
             var newItem = $('#item').val();
-            $('#list-display .list').append('<li class="list-item"><span class="box"><i class="fa fa-square-o" id="boxEmpty"></i></span>' + newItem + '<span class="remove"><i class="fa fa-times-circle"></i></span></li>');
+            $('#list-display .list').append('<li class="list-item"><span class="box"><i class="fa fa-square-o"></i></span>' + newItem + '<span class="remove"><i class="fa fa-times-circle"></i></span></li>');
             $('#item').val('');
         }
     });
 
-//check character length
-    $('#item').keyup(function(){
+    //check character length
+    $('#item').keyup(function () {
         var itemLength = $(this).val().length;
         var charactersLeft = 40 - itemLength;
         $('.counter').text(charactersLeft);
-        if(charactersLeft < 0) {
+        if (charactersLeft < 0) {
             $('.submit').prop('disabled', 'disabled')
             $('.counter').text('Exceeded character limit!');
         }
